@@ -7,7 +7,6 @@ import javax.swing.*;
 public class MiniPaint extends JFrame implements ActionListener, MouseListener, MouseMotionListener {
 
     private ButtonGroup modos;
-    private ButtonGroup colores;
     private JPanel area;
     private JLabel status;
     private Image buffer;
@@ -79,10 +78,8 @@ public class MiniPaint extends JFrame implements ActionListener, MouseListener, 
         modo = PUNTOS;
         
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setLocationRelativeTo(this);
+        setLocationRelativeTo(null);
         setSize(900, 700);
-        
-        show();
         
         buffer = area.createImage(area.getWidth(), area.getHeight());
     }
@@ -172,6 +169,7 @@ public class MiniPaint extends JFrame implements ActionListener, MouseListener, 
     
     public static void main(String[] args) {
         MiniPaint miniPaint = new MiniPaint();
+        miniPaint.setVisible(true);
     }
     
 }
